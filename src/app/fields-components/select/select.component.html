@@ -1,0 +1,5 @@
+
+<label>{{formInfo.label}}</label>
+<select name={{formInfo.statuses}} id={{formInfo.statuses}} formControlName={{formInfo.fieldName}}>
+    <option *ngFor="let option of formInfo.options" value="option.value">{{option.label}}</option>
+</select>

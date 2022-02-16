@@ -1,0 +1,43 @@
+<div class="flex flex-col p-12 ml-24 px-24">
+    <!--header-->
+    <div class="flex-col sm:flex-row">
+        <h3>{{listViewHeader?.configuration.heading}}</h3>
+        <div class="flex sm:flex-row py-4">
+            <div *ngIf="">
+
+            </div>
+            <button class="px-4 rounded text-xs mr-8 " 
+            [ngClass]="[control.styleInfo.border? control.styleInfo.border : '',control.hideAt ? control.hideAt : '',
+            control.styleInfo.bgColor ? control.styleInfo.bgColor : '',control.styleInfo.textColor ? control.styleInfo.textColor : '']"
+             *ngFor="let control of listViewHeader?.configuration.controls">{{control.label ? control.label: control.action}} </button>
+        </div>
+    </div>
+    <!--filter-->
+    <div>
+        <form class="flex w-full" [formGroup]="customerForm">
+  
+                <div class="md:w-1/3  mb-6 md:mb-0" *ngFor="let field of fieldsInfo">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                        {{field.label}}
+                    </label>
+                   
+                   
+                    <!-- <select *ngIf="field.type === 'list'"
+                        class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        name={{field.fieldName}} id={{field.fieldName}} formControlName={{field.fieldName}}>
+                        <option *ngFor="let option of field.options" [value]="option.value">
+                            {{option.label}}
+                        </option>
+                    </select> -->
+                    <app-multi-select  [dropData]="field">
+                    </app-multi-select>
+                </div>
+
+           
+        </form>
+         <!--extra controls-->
+         <div>
+            <button class="px-4 rounded text-xs mr-8 border border-gray-300 bg-white text-blue-600" (click)="showJson()">show json</button>
+        </div>
+    </div>
+</div>

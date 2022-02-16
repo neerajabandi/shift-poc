@@ -1,0 +1,58 @@
+<!-- <div class="check-list">
+    <div class="bg-blue-500 text-white text-xs font-bold py-2 px-4 rounded-full inline-block" *ngFor="let option of selectOptions; let i=index;">
+        {{option}}
+        <span class="cursor-pointer" (click)="removePill(option,i);">X</span>
+    </div>
+    <span class="search">
+        <input class="check-list__search" type="text" [ngModel]="dropInput" (change)="dropInputChange($event)" [disabled]="dropData.isLocked">
+        <span (click)="showDropDown()" [ngClass]="{'pointer-events-none': dropData.isLocked}"><i class="fa fa-angle-down"></i></span>
+    </span>
+    <div [hidden]="!showUl">
+    <ul class="check-list__unselected-list" >
+        <li class="check-list-item" *ngFor="let data of dropData.options">
+            <span><input  [checked]="isChecked(data)"  class="check-list__item-checkbox" type="checkbox" (change)="onCheckboxChange(data.label, $event)"></span>
+            <span>{{data.label}}</span>
+            <span (click)="trashDropInputArr(data.label.label)"><i class="fa fa-trash"></i></span>
+        </li>
+    </ul>
+</div>
+</div> -->
+<div class="flex flex-col" *ngIf="dropData.options">
+    <label for={{dropData.label}} class="flex relative items-center mb-4 cursor-pointer">
+        <input type="checkbox" id={{dropData.label}} [checked]="dropData.allowMultiSelect"  (change)="dropData.allowMultiSelect = !dropData.allowMultiSelect" class="sr-only">
+        <div class="w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600"></div>
+        <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Allow multi select?</span>
+        </label>
+</div>
+<div class="mb-4  w-3/4 flex flex-row" *ngIf="dropData.options">
+    <div class=" w-2/3">
+        <input [(ngModel)]="optionToAdd" class=" shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+    type="text" placeholder="Add new">
+    </div>
+    
+    <button (click)="addOption()" class="ml-4 w-1/3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+        Add 
+      </button>
+  </div>
+<div class="flex flex-col" *ngIf="dropData.options">
+  
+        <label for={{data.label}} class="flex relative items-center mb-4 cursor-pointer" *ngFor="let data of dropData.options; let i=index;">
+            <div class="flex flex-row w-2/3 ">
+            <input type="checkbox" id={{data.label}} class="sr-only" [checked]="data.selected" (change)="data.selected = !data.selected">
+            <div class="w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600"></div>
+            <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{data.label}}</span>
+            
+        </div>
+        <span (click)="deleteOption(i)"><i class="text-red-400 fa fa-trash"></i></span>
+            </label>
+           
+    
+        
+</div>
+<div class="flex flex-col pt-10" *ngIf="!dropData.options">
+    <div class=" w-full">
+        <input class=" shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+    type="text" [(ngModel)]="dropData.query" placeholder="Add new">
+    </div>
+    
+</div>

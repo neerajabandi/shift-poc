@@ -1,0 +1,56 @@
+.check-list{
+    width: 150px;
+}
+.search{
+    display: flex;
+
+    input{
+        width: 130px;
+        border: 1px solid black;
+        border-right: 0px;
+    }
+
+    input:focus{
+        border-radius: 0px;
+        border-right: 0px;
+        // border: 0px;
+        outline: none;
+        text-decoration: none;
+    }
+
+    span{
+        border: 1px solid black;
+
+        i{
+            font-size: 27px;
+        }
+    }
+}
+
+.check-list__unselected-list{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+
+    .check-list-item{
+        display: flex;
+
+        span{
+            padding-left: 10px;
+        }
+    }
+}
+
+.toggle-bg:after {
+    content: '';
+    @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
+}
+
+input:checked + .toggle-bg:after {
+    transform: translateX(100%);
+    @apply border-white;
+}
+
+input:checked + .toggle-bg {
+    @apply bg-blue-600 border-blue-600;
+}

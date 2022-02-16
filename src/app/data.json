@@ -1,0 +1,658 @@
+{
+    "id": "84ff2242-8f4c-43e7-96b2-4b5a3d781ac0",
+    "pk": "84ff2242-8f4c-43e7-96b2-4b5a3d781ac0",
+    "type": "clientSettings",
+    "created": "2021-07-14T16:44:28+00:00",
+    "createdBy": "635fa5c8-45ad-4027-98f1-9c241955adb4",
+    "modified": "2021-07-15T20:39:30.782459+00:00",
+    "modifiedBy": "635fa5c8-45ad-4027-98f1-9c241955adb4",
+    "clientId": "a57c4cc4-c072-44a4-8766-fa14bda2d723",
+    "clientName": "Development",
+    "themeName": "",
+    "logoName": "",
+    "defaultRoute": "/dashboard",
+    "installedApplications": [
+        {
+            "applicationId": "d165ce18-c922-47e8-ae0d-f0b19c67ea2a",
+            "name": "dashboardApp",
+            "displayName": "Dashboard",
+            "displayOrder": 10,
+            "description": null,
+            "iconName": "template",
+            "route": "/dashboard",
+            "isEnabled": true,
+            "mobileEnabled": true,
+            "manifest": {
+                "runtimeInfo": {
+                    "moduleRoot": "dashboard",
+                    "exposes": "./Module",
+                    "exposedModuleName": "DashboardModule",
+                    "remoteFileName": "remoteEntry.js",
+                    "devRemoteUrl": "http://localhost:4201"
+                },
+                "settings": [
+                    {
+                        "key": "listView.filter",
+                        "value": "{\"configuration\": {\"searchEnabled\": false,\"facets\":[{\"label\":\"Dealers\",\"category\":\"retailerFilter\",\"fieldName\":\"retailerIds\",\"type\":\"list\",\"target\":\"panel\",\"valueType\":\"list\",\"allowMultiSelect\":true,\"isLocked\":true,\"isDefault\":true,\"options\":[{\"label\":\"National\",\"value\":null,\"selected\":true}],\"query\":\"query{getRetailers(skip:0, take:1000){items {id name displayName}}}\",\"queryTarget\":\"getRetailers\",\"permission\":{\"type\":\"facet\",\"canAccess\":[\"*\"],\"restrict\":[{\"role\":\"*\",\"instruct\":\"checkClaim\"}]}},{\"label\":\"Last Activity\",\"category\":\"lastActivityFilter\",\"fieldName\":\"dateRange\",\"type\":\"date\",\"target\":\"dateDropdown\",\"valueType\":\"obj\",\"allowMultiSelect\":false,\"isLocked\":true,\"isDefault\":true,\"options\":[{\"label\":\"This Month\",\"value\":0,\"selected\":true},{\"label\":\"Last 7 Days\",\"value\":7,\"selected\":false},{\"label\":\"Last 2 Weeks\",\"value\":14,\"selected\":false},{\"label\":\"Last Month\",\"value\":31,\"selected\":false},{\"label\":\"Last 90 Days\",\"value\":90,\"selected\":false}],\"query\":null,\"queryTarget\":null,\"permission\":{\"type\":\"facet\",\"canAccess\":[\"*\"],\"restrict\":null}}]}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "listView.header",
+                        "value": "{\"configuration\": {\"heading\": \"Welcome {CustomerName}\",\"controls\": null}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    }
+                ],
+                "annotations": []
+            }
+        },
+        {
+            "applicationId": "b98ce9e4-3272-45de-9420-6749436c4db9",
+            "name": "reporting",
+            "displayName": "Reporting",
+            "displayOrder": 20,
+            "description": null,
+            "iconName": "chartPie",
+            "route": "/reporting",
+            "isEnabled": false,
+            "mobileEnabled": true,
+            "manifest": {
+                "runtimeInfo": null,
+                "installedTraits": [],
+                "settings": [],
+                "annotations": []
+            }
+        },
+        {
+            "applicationId": "181a4f0e-6c56-4ecf-a92c-b8a71b1417b5",
+            "name": "inbox",
+            "displayName": "Inbox",
+            "displayOrder": 30,
+            "description": null,
+            "iconName": "archive",
+            "route": "/inbox",
+            "isEnabled": true,
+            "mobileEnabled": false,
+            "manifest": {
+                "runtimeInfo": null,
+                "installedTraits": [],
+                "settings": [],
+                "annotations": []
+            }
+        },
+        {
+            "applicationId": "a44d3e2c-68be-4134-8433-98879917743d",
+            "name": "response",
+            "displayName": null,
+            "displayOrder": 40,
+            "description": null,
+            "iconName": null,
+            "route": null,
+            "isEnabled": true,
+            "mobileEnabled": true,
+            "manifest": {
+                "runtimeInfo": null,
+                "installedTraits": [],
+                "settings": [],
+                "annotations": [
+                    {
+                        "name": "CRM Support",
+                        "description": null,
+                        "isEnabled": true,
+                        "targets": [
+                            {
+                                "applicationId": "5627bcc4-1b17-434a-a805-d93295d94325",
+                                "isEnabled": true,
+                                "settings": [
+                                    {
+                                        "key": "details.emailEnabled",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "key": "details.activityManagementEnabled",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "key": "crm.toolbar",
+                                        "value": "{\"configuration\": {\"controls\": [{\"action\":\"email\",\"position\":1,\"label\":\"Email\",\"enabled\":true,\"styleInfo\":{\"bgColor\":\"bg-blue-600\",\"textColor\":\"text-white\",\"border\":\"\"},\"iconInfo\":[{\"name\":\"emailSolid\",\"size\":4}],\"hideAt\":null,\"permission\": {\"type\":\"control\",\"canAccess\":[\"System Administrator\",\"System Contributor\",\"Conduit Admin\",\"Conduit Contributor\"],\"restrict\":[]}},{\"action\":\"edit\",\"position\":2,\"label\":\"Edit\",\"enabled\":true,\"styleInfo\":{\"bgColor\":\"bg-white\",\"textColor\":\"text-gray-700\",\"border\":\"border border-gray-300\"},\"iconInfo\":[{\"name\":\"pencilAlt\",\"size\":4}],\"hideAt\":null,\"permission\": {\"type\":\"control\",\"canAccess\":[\"System Administrator\",\"System Contributor\",\"Conduit Admin\",\"Conduit Contributor\",\"Conduit Analyst\"],\"restrict\":[]}},{\"action\":\"addActivity\",\"position\":3,\"label\":\"Add Activity\",\"enabled\":true,\"styleInfo\":{\"bgColor\":\"bg-white\",\"textColor\":\"text-gray-700\",\"border\":\"border border-gray-300\"},\"iconInfo\":[{\"name\":\"plus\",\"size\":4}],\"hideAt\":\"\",\"permission\": {\"type\":\"control\",\"canAccess\":[\"System Administrator\",\"System Contributor\",\"Conduit Admin\",\"Conduit Contributor\"],\"restrict\":[]}}]}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "applicationId": "5627bcc4-1b17-434a-a805-d93295d94325",
+            "name": "customersApp",
+            "displayName": "Customers",
+            "displayOrder": 50,
+            "description": null,
+            "iconName": "person",
+            "route": "/customers",
+            "isEnabled": true,
+            "mobileEnabled": true,
+            "manifest": {
+                "runtimeInfo": {
+                    "moduleRoot": "customers",
+                    "exposes": "./Module",
+                    "exposedModuleName": "CustomersModule",
+                    "remoteFileName": "remoteEntry.js",
+                    "devRemoteUrl": "http://localhost:4202"
+                },
+                "installedTraits": [
+                    {
+                        "traitConfigurationId": "55c90e13-8d68-406e-b995-0b54dae5a40c"
+                    },
+                    {
+                        "traitConfigurationId": "7dd6e1c8-62c4-4779-84bf-3f963721796a"
+                    },
+                    {
+                        "traitConfigurationId": "1c1eefd2-964c-4495-99b3-267845f1492b"
+                    },
+                    {
+                        "traitConfigurationId": "2ef4ddea-1ee7-4137-9518-599fb5a6ace7"
+                    },
+                    {
+                        "traitConfigurationId": "2abb228c-5f2b-4076-978c-9d870fb14973"
+                    },
+                    {
+                        "traitConfigurationId": "fb9c00f9-308d-42a7-8208-0082a88036de"
+                    },
+                    {
+                        "traitConfigurationId": "3b148295-8817-4ed2-8ee6-0020bc694120"
+                    }
+                ],
+                "settings": [
+                    {
+                        "key": "details.navigation.items",
+                        "value": "Journey|Traits",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "listView.filter",
+                        "value": "{\"configuration\": {\"searchEnabled\":true,\"facets\":[{\"label\":\"Status\",\"category\":\"statusFilter\",\"fieldName\":\"statuses\",\"type\":\"list\",\"target\":\"panel\",\"valueType\":\"list\",\"allowMultiSelect\":true,\"isLocked\":false,\"isDefault\":false,\"options\":[{\"label\":\"New\",\"value\":\"New\",\"selected\":false},{\"label\":\"Active\",\"value\":\"Active\",\"selected\":false},{\"label\":\"Merged\",\"value\":\"Merged\",\"selected\":false},{\"label\":\"Lost\",\"value\":\"Lost\",\"selected\":false},{\"label\":\"Sold\",\"value\":\"Sold\",\"selected\":false},{\"label\":\"Installed\",\"value\":\"Installed\",\"selected\":false}],\"query\":null,\"queryTarget\":null,\"permission\":{\"type\":\"facet\",\"canAccess\":[\"*\"],\"restrict\":null}},{\"label\":\"Last Activity\",\"category\":\"lastActivityFilter\",\"fieldName\":\"dateRange\",\"type\":\"date\",\"target\":\"dateDropdown\",\"valueType\":\"obj\",\"allowMultiSelect\":false,\"isLocked\":true,\"isDefault\":true,\"options\":[{\"label\":\"Last 7 Days\",\"value\":7,\"selected\":false},{\"label\":\"Last 2 Weeks\",\"value\":14,\"selected\":false},{\"label\":\"Last Month\",\"value\":31,\"selected\":true},{\"label\":\"Last 90 Days\",\"value\":90,\"selected\":false}],\"query\":null,\"queryTarget\":null,\"permission\":{\"type\":\"facet\",\"canAccess\":[\"*\"],\"restrict\":null}},{\"label\":\"Dealers\",\"category\":\"retailerFilter\",\"fieldName\":\"retailerIds\",\"type\":\"list\",\"target\":\"panel\",\"valueType\":\"list\",\"allowMultiSelect\":true,\"isLocked\":false,\"isDefault\":false,\"options\":null,\"query\":\"query{getRetailers(skip:0, take:1000){items {id name displayName}}}\",\"queryTarget\":\"getRetailers\",\"permission\":{\"type\":\"facet\",\"canAccess\":[\"*\"],\"restrict\":[{\"role\":\"*\",\"instruct\":\"checkClaim\"}]}}]}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "listView.header",
+                        "value": "{\"configuration\":{\"heading\": \"Customers\",\"controls\":[{\"action\":\"new\",\"position\":1,\"label\":\"Customer\",\"enabled\":true,\"styleInfo\":{\"bgColor\":\"bg-blue-600\",\"textColor\":\"text-white\",\"border\":\"\"},\"iconInfo\":[{\"name\":\"plus\",\"size\":6}],\"hideAt\":\"md:hidden\",\"permission\": {\"type\":\"control\",\"canAccess\":[\"System Administrator\",\"System Contributor\",\"Conduit Admin\",\"Conduit Contributor\"],\"restrict\":[]}},{\"action\":\"layoutToggle\",\"position\":2,\"label\":null,\"enabled\":false,\"styleInfo\":{\"bgColor\":\"bg-white\",\"textColor\":\"text-gray-500\",\"border\":\"border border-gray-300\"},\"iconInfo\":[{\"name\":\"grid\",\"size\":6},{\"name\":\"bulletList\",\"size\":6}],\"hideAt\":\"md:hidden\",\"permission\": {\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}},{\"action\":\"export\",\"position\":3,\"label\":null,\"enabled\":true,\"styleInfo\":{\"bgColor\":\"bg-white\",\"textColor\":\"text-blue-600\",\"border\":\"border border-gray-300\"},\"iconInfo\":[{\"name\":\"download\",\"size\":6}],\"hideAt\":\"\",\"permission\": {\"type\":\"control\",\"canAccess\":[\"System Administrator\",\"System Contributor\",\"System Reader\",\"Conduit Admin\",\"Conduit Contributor\",\"Conduit Analyst\",\"Conduit Reader\"],\"restrict\":[]}}]}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "detailsView.tabtoolbar",
+                        "value": "{\"configuration\":{\"tabItems\":[{\"label\":\"Journey\",\"id\":\"journey\",\"enabled\":true,\"hiddenClass\":null,\"styleInfo\":null,\"iconInfo\":[],\"permission\":{\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}},{\"label\":\"Traits\",\"id\":\"traits\",\"enabled\":true,\"hiddenClass\":null,\"styleInfo\":null,\"iconInfo\":[],\"permission\":{\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}},{\"label\":\"Details\",\"id\":\"details\",\"enabled\":true,\"hiddenClass\":\"lg:hidden\",\"styleInfo\":null,\"iconInfo\":[],\"permission\":{\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}}]}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "customerForm.customerStatus",
+                        "value": "{\"lookups\":[{\"id\":\"new\",\"name\":\"New\",\"isDefault\":false},{\"id\":\"active\",\"name\":\"Active\",\"isDefault\":true},{\"id\":\"merged\",\"name\":\"Merged\",\"isDefault\":false},{\"id\":\"lost\",\"name\":\"Lost\",\"isDefault\":false},{\"id\":\"sold\",\"name\":\"Sold\",\"isDefault\":false},{\"id\":\"installed\",\"name\":\"Installed\",\"isDefault\":false}]}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Active.backgroundColorClass",
+                        "value": "bg-green-100",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Active.textColorClass",
+                        "value": "text-green-600",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.New.backgroundColorClass",
+                        "value": "bg-blue-100",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.New.textColorClass",
+                        "value": "text-blue-600",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Lost.backgroundColorClass",
+                        "value": "bg-red-100",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Lost.textColorClass",
+                        "value": "text-red-600",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Merged.backgroundColorClass",
+                        "value": "bg-yellow-100",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Merged.textColorClass",
+                        "value": "text-yellow-600",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Sold.backgroundColorClass",
+                        "value": "bg-purple-100",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Sold.textColorClass",
+                        "value": "text-purple-600",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Installed.backgroundColorClass",
+                        "value": "bg-purple-100",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "processStatus.Installed.textColorClass",
+                        "value": "text-purple-600",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.installed.backgroundColorClass",
+                        "value": "bg-green-500",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.installed.borderColorClass",
+                        "value": null,
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.installed.iconName",
+                        "value": "currencyDollar",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.installed.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.sold.backgroundColorClass",
+                        "value": "bg-green-500",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.sold.borderColorClass",
+                        "value": null,
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.sold.iconName",
+                        "value": "currencyDollar",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.sold.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.lostSale.backgroundColorClass",
+                        "value": "bg-red-600",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.lostSale.borderColorClass",
+                        "value": null,
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.lostSale.iconName",
+                        "value": "lockOpen",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.lostSale.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.default.backgroundColorClass",
+                        "value": "bg-yellow-400",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.default.borderColorClass",
+                        "value": null,
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.default.iconName",
+                        "value": "eye",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.default.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": true,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "event.phoneCall.backgroundColorClass",
+                        "value": "bg-yellow-400",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.phoneCall.iconName",
+                        "value": "phone",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.phoneCall.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.email.backgroundColorClass",
+                        "value": "bg-yellow-400",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.email.iconName",
+                        "value": "email",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.email.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.digitalRetailingLead.backgroundColorClass",
+                        "value": "bg-blue-600",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.digitalRetailingLead.iconName",
+                        "value": "person",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.digitalRetailingLead.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.webSession.backgroundColorClass",
+                        "value": "bg-indigo-500",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.webSession.iconName",
+                        "value": "globe",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "event.webSession.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.webSession.backgroundColorClass",
+                        "value": "bg-gray-100",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.webSession.borderColorClass",
+                        "value": "border-gray-400",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.webSession.iconName",
+                        "value": "globe",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.webSession.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.disposition.backgroundColorClass",
+                        "value": "bg-gray-100",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.disposition.borderColorClass",
+                        "value": "border-gray-400",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.disposition.iconName",
+                        "value": "globe",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.disposition.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.lead.backgroundColorClass",
+                        "value": "bg-gray-100",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.lead.borderColorClass",
+                        "value": "border-gray-400",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.lead.iconName",
+                        "value": "person",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "activityCount.lead.textColorClass",
+                        "value": "text-white",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "journey.attributeLabelLookup",
+                        "value": "{\"email.subject\":\"Subject\"}",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "journey.leadActivityTypeToStatusMap",
+                        "value": "{\"lost-sale\":\"Lost\",\"declined\":\"Lost\",\"sold\":\"Sold\",\"installed\":\"Installed\"}",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "journey.leadActivityTypeToJourneyActivityTypeMap",
+                        "value": "{\"brand\":\"digitalRetailingLead\",\"organic\":\"digitalRetailingLead\",\"called-customer\":\"phoneCall\",\"customer-called\":\"phoneCall\",\"customer-emailed\":\"email\",\"declined\":\"lostSale\",\"emailed-customer\":\"email\",\"lost-sale\":\"lostSale\",\"sold\":\"sold\",\"installed\":\"installed\"}",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    }
+                ],
+                "annotations": []
+            }
+        },
+        {
+            "applicationId": "d165ce18-c922-47e8-ae0d-f0b19c67ea2a",
+            "name": "retailersApp",
+            "displayName": "Dealers",
+            "displayOrder": 60,
+            "description": null,
+            "iconName": "library",
+            "route": "/retailers",
+            "isEnabled": true,
+            "mobileEnabled": false,
+            "manifest": {
+                "runtimeInfo": {
+                    "moduleRoot": "retailers",
+                    "exposes": "./Module",
+                    "exposedModuleName": "RetailersModule",
+                    "remoteFileName": "remoteEntry.js",
+                    "devRemoteUrl": "http://localhost:4203"
+                },
+                "installedTraits": [
+                    {
+                        "traitConfigurationId": "51707d49-2c2d-49e0-8caf-99fbf9d01fa7"
+                    }
+                ],
+                "settings": [
+                    {
+                        "key": "retailerStatus.Active.backgroundColorClass",
+                        "value": "bg-green-100",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "retailerStatus.Active.textColorClass",
+                        "value": "text-green-800",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "retailerStatus.Inactive.backgroundColorClass",
+                        "value": "bg-red-100",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "retailerStatus.Inactive.textColorClass",
+                        "value": "text-red-800",
+                        "isOverridable": "true",
+                        "isReadOnly": "false"
+                    },
+                    {
+                        "key": "listView.filter",
+                        "value": "{\"configuration\": {\"searchEnabled\": true,\"facets\":[]}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "listView.header",
+                        "value": "{\"configuration\":{\"heading\":\"Dealers\",\"controls\":[{\"action\":\"new\",\"type\":\"primary\",\"label\":\"Dealer\",\"enabled\":true,\"styleInfo\":{\"bgColor\":\"bg-blue-600\",\"textColor\":\"text-white\",\"border\":\"\"},\"iconInfo\":[{\"name\":\"plus\",\"size\":6}],\"hide\":\"md:hidden\",\"permission\": {\"type\":\"control\",\"canAccess\":[\"System Administrator\",\"System Contributor\",\"Retailer Administrator\"],\"restrict\":[]}},{\"action\":\"layoutToggle\",\"type\":\"toggle\",\"label\":null,\"enabled\":false,\"styleInfo\":{\"bgColor\":\"bg-white\",\"textColor\":\"text-gray-500\",\"border\":\"border border-gray-300\"},\"iconInfo\":[{\"name\":\"grid\",\"size\":6},{\"name\":\"bulletList\",\"size\":6}],\"hide\":\"md:hidden\",\"permission\": {\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}},{\"action\":\"export\",\"type\":\"toggle\",\"label\":null,\"enabled\":false,\"styleInfo\":{\"bgColor\":\"bg-white\",\"textColor\":\"text-blue-600\",\"border\":\"border border-gray-300\"},\"iconInfo\":[{\"name\":\"download\",\"size\":6}],\"hide\":\"\",\"permission\":{\"type\":\"control\",\"canAccess\":[\"System Administrator\",\"System Contributor\",\"System Reader\",\"Retailer Administrator\",\"Retailer Analyst\",\"Retailer Reader\"],\"restrict\":[]}}]}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    },
+                    {
+                        "key": "detailsView.tabtoolbar",
+                        "value": "{\"configuration\":{\"tabItems\":  [{\"label\": \"General\",\"id\": \"general\",\"enabled\":true,\"hiddenClass\": null,\"styleInfo\":null,\"iconInfo\":[],\"permission\": {\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}},{\"label\": \"Hours & Holidays\",\"id\": \"hours\",\"enabled\":true,\"hiddenClass\": null,\"styleInfo\":null,\"iconInfo\":[],\"permission\": {\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}},{\"label\": \"Traits\",\"id\": \"traits\",\"enabled\":true,\"hiddenClass\": null,\"styleInfo\":null,\"iconInfo\":[],\"permission\": {\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}},{\"label\": \"Hierarchies\",\"id\": \"hierarchies\",\"enabled\":true,\"hiddenClass\": null,\"styleInfo\":null,\"iconInfo\":[],\"permission\": {\"type\":\"control\",\"canAccess\":[\"*\"],\"restrict\":[]}}]}}",
+                        "isOverridable": false,
+                        "isReadOnly": false
+                    }
+                ],
+                "annotations": []
+            }
+        },
+        {
+            "applicationId": "1dac53fd-6702-4e0a-a0e3-bd55f0b48ec8",
+            "name": "leads",
+            "displayName": null,
+            "displayOrder": 70,
+            "description": null,
+            "iconName": null,
+            "route": null,
+            "isEnabled": true,
+            "mobileEnabled": true,
+            "manifest": {
+                "runtimeInfo": null,
+                "installedTraits": [],
+                "settings": [],
+                "annotations": [
+                    {
+                        "name": "Lead Type Lookups",
+                        "description": null,
+                        "isEnabled": true,
+                        "targets": [
+                            {
+                                "applicationId": "5627bcc4-1b17-434a-a805-d93295d94325",
+                                "isEnabled": true,
+                                "settings": [
+                                    {
+                                        "key": "leadForm.leadSources",
+                                        "value": "{\"lookups\":[{\"id\":\"6afe9d67-fcce-4388-8fc6-50b382391eab\",\"name\":\"Harmony\",\"isDefault\":true},{\"id\":\"f8482877-23bf-440b-846b-99030968d860\",\"name\":\"Sunsetter Call Center\",\"isDefault\":false},{\"id\":\"04fa76a7-98c3-48dd-83ca-cd19b8652690\",\"name\":\"Sunsetter.com\",\"isDefault\":false},{\"id\":\"a330167f-4aa3-4891-bd9d-ae4df9bc6bef\",\"name\":\"Test Source\",\"isDefault\":false}]}"
+                                    },
+                                    {
+                                        "key": "leadForm.leadTypes",
+                                        "value": "{\"lookups\":[{\"id\":\"5ad46846-3435-4dea-954c-613416cdfd7c\",\"name\":\"New Sales\",\"isDefault\":true},{\"id\":\"81a77a3d-6284-4b90-886e-1909494b8ece\",\"name\":\"Service\",\"isDefault\":false}]}"
+                                    },
+                                    {
+                                        "key": "leadForm.leadReasons",
+                                        "value": "{\"lookups\":[{\"id\":\"e3da4d5f-e4eb-403a-b40a-0ef6d667c531\",\"name\":\"Phone\",\"isDefault\":false},{\"id\":\"cf8f2df4-2e3a-4b4d-a2de-32dc4c2a8c4d\",\"name\":\"Walk-In\",\"isDefault\":true},{\"id\":\"834993ea-d8a9-4aad-8b95-b51d9923c269\",\"name\":\"Email\",\"isDefault\":false},{\"id\":\"9608f47e-c14c-42c8-8b71-9d0c13b65a44\",\"name\":\"Other\",\"isDefault\":false}]}"
+                                    },
+                                    {
+                                        "key": "activityForm.activityTypes",
+                                        "value": "{\"lookups\":[{\"id\":\"appointment-did-not-show\",\"name\":\"Appointment Did Not Show\",\"isDefault\":false},{\"id\":\"appointment-set\",\"name\":\"Appointment Set\",\"isDefault\":false},{\"id\":\"appointment-showed\",\"name\":\"Appointment Showed\",\"isDefault\":false},{\"id\":\"called-customer\",\"name\":\"Called Customer\",\"isDefault\":false},{\"id\":\"customer-called\",\"name\":\"Customer Called\",\"isDefault\":false},{\"id\":\"customer-quoted\",\"name\":\"Customer Quoted\",\"isDefault\":false},{\"id\":\"declined\",\"name\":\"Declined\",\"isDefault\":false},{\"id\":\"emailed-customer\",\"name\":\"Emailed Customer\",\"isDefault\":false},{\"id\":\"inbound-sms-text-message\",\"name\":\"Inbound SMS/Text Message\",\"isDefault\":false},{\"id\":\"installed\",\"name\":\"Installed\",\"isDefault\":false},{\"id\":\"lost-sale\",\"name\":\"Lost Sale\",\"isDefault\":false},{\"id\":\"met-with-customer\",\"name\":\"Met With Customer\",\"isDefault\":false},{\"id\":\"outbound-sms-text-message\",\"name\":\"Outbound SMS/Text Message\",\"isDefault\":false},{\"id\":\"product-demonstrated\",\"name\":\"Product Demonstrated\",\"isDefault\":false},{\"id\":\"sold\",\"name\":\"Sold\",\"isDefault\":false}]}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "traits": [],
+    "references": [],
+    "_rid": "MUk7ANAgJ8wMAAAAAAAAAA==",
+    "_self": "dbs/MUk7AA==/colls/MUk7ANAgJ8w=/docs/MUk7ANAgJ8wMAAAAAAAAAA==/",
+    "_etag": "\"02002c17-0000-0100-0000-61f1a4190000\"",
+    "_attachments": "attachments/",
+    "_ts": 1643226137
+}

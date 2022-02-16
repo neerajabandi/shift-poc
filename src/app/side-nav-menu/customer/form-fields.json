@@ -1,0 +1,127 @@
+{
+    "configuration": {
+        "searchEnabled": true,
+        "facets": [
+            {
+                "label": "Status",
+                "category": "statusFilter",
+                "fieldName": "statuses",
+                "type": "list",
+                "target": "panel",
+                "valueType": "list",
+                "allowMultiSelect": true,
+                "isLocked": false,
+                "isDefault": false,
+                "options": [
+                    {
+                        "label": "New",
+                        "value": "New",
+                        "selected": false
+                    },
+                    {
+                        "label": "Active",
+                        "value": "Active",
+                        "selected": false
+                    },
+                    {
+                        "label": "Merged",
+                        "value": "Merged",
+                        "selected": false
+                    },
+                    {
+                        "label": "Lost",
+                        "value": "Lost",
+                        "selected": false
+                    },
+                    {
+                        "label": "Sold",
+                        "value": "Sold",
+                        "selected": false
+                    },
+                    {
+                        "label": "Installed",
+                        "value": "Installed",
+                        "selected": false
+                    }
+                ],
+                "query": null,
+                "queryTarget": null,
+                "permission": {
+                    "type": "facet",
+                    "canAccess": [
+                        "*"
+                    ],
+                    "restrict": null
+                }
+            },
+            {
+                "label": "Last Activity",
+                "category": "lastActivityFilter",
+                "fieldName": "dateRange",
+                "type": "date",
+                "target": "dateDropdown",
+                "valueType": "obj",
+                "allowMultiSelect": false,
+                "isLocked": true,
+                "isDefault": true,
+                "options": [
+                    {
+                        "label": "Last 7 Days",
+                        "value": 7,
+                        "selected": false
+                    },
+                    {
+                        "label": "Last 2 Weeks",
+                        "value": 14,
+                        "selected": false
+                    },
+                    {
+                        "label": "Last Month",
+                        "value": 31,
+                        "selected": true
+                    },
+                    {
+                        "label": "Last 90 Days",
+                        "value": 90,
+                        "selected": false
+                    }
+                ],
+                "query": null,
+                "queryTarget": null,
+                "permission": {
+                    "type": "facet",
+                    "canAccess": [
+                        "*"
+                    ],
+                    "restrict": null
+                }
+            },
+            {
+                "label": "Dealers",
+                "category": "retailerFilter",
+                "fieldName": "retailerIds",
+                "type": "list",
+                "target": "panel",
+                "valueType": "list",
+                "allowMultiSelect": true,
+                "isLocked": false,
+                "isDefault": false,
+                "options": null,
+                "query": "query{getRetailers(skip:0, take:1000){items {id name displayName}}}",
+                "queryTarget": "getRetailers",
+                "permission": {
+                    "type": "facet",
+                    "canAccess": [
+                        "*"
+                    ],
+                    "restrict": [
+                        {
+                            "role": "*",
+                            "instruct": "checkClaim"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
